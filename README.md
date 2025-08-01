@@ -1,32 +1,78 @@
-# Motorq Data Science Assignment 2025
+# Motorq Data Science Assignment 2024 - EDA and Data Parsing
 
-## Instructions for Applicants
+This repository contains the results of an exploratory data analysis (EDA) and data parsing project on a dataset provided by Motorq. The goal of this project was to understand the provided data, clean it, and prepare it for further analysis.
 
-### Step 1: Read the Assignment
-📖 **Read `problem_statement_ce.pdf` carefully** - This contains all the requirements, specifications, and evaluation criteria for your assignment.
+## Project Overview
 
-### Step 2: Get the Dataset
-📦 **Download and extract `Motorq Data Science Assignment - 2025.zip`** - This contains your dataset and any supporting materials.
+The project involved the following steps:
 
-### Step 3: Complete the Assignment
-💻 Develop your solution according to the specifications in the PDF.
+1.  **Data Conversion:** The initial dataset included data in JSON format, which was converted to CSV for easier handling and analysis.
+2.  **Data Exploration:** An initial exploration of the different data files was conducted to understand their structure and contents.
+3.  **Data Cleaning:** The data was cleaned to address issues such as missing values and duplicate entries.
+4.  **Data Merging and Transformation:** The different data sources were merged and transformed to create a unified dataset.
+5.  **Exploratory Data Analysis:** A deeper analysis of the cleaned and merged data was performed to uncover insights and identify patterns.
 
-### Step 4: Submit Your Work
-📤 **Zip all your code and upload to GitHub:**
-- Create a new repository for your solution
-- Include all your code, notebooks, documentation, and results
-- Make sure your repository is public or share access with the evaluation team
-- Include a clear README explaining your approach and how to run your code
+## Dataset Description
 
-### Step 5: Clean Up
-🗑️ **Delete the dataset after completion** - For data privacy and security reasons, please delete all assignment data from your local machine once you've submitted your work.
+The dataset consists of the following files:
 
-## Need Help?
-💬 **Feel free to reach out to the Motorq team** if you have any questions or need clarification during the assignment.
+*   `telemetry_data.csv`: High-rate telematics data from vehicles.
+*   `triggers_soc.csv`: Low-rate trigger data from vehicles.
+*   `vehicle_pnid_mapping.csv`: Mapping between vehicle IDs and PNIDs.
+*   `artificial_ign_off_data.csv`: Synthetic data for ignition off events.
+*   `events.csv`: Vehicle ignition events.
+*   `Battery_Data.csv`: Data related to vehicle battery performance. Due to the large file size, the contents of this file were not fully explored.
+*   `Assumptions and plan.txt`: A text file outlining the initial plan and assumptions for the project.
 
-## Repository Contents
-- `problem_statement_ce.pdf` - **START HERE** - Complete assignment requirements
-- `Motorq Data Science Assignment - 2025.zip` - Dataset and materials
+### Data Columns
 
----
-**All the best with your assignment!** 🚀
+The main data files contain the following columns:
+
+*   **Telematics (TLM):**
+    *   `ID`
+    *   `VEHICLE_ID`: String
+    *   `TIMESTAMP`: datetime (dd-mm-yy hh:mm:ss)
+    *   `SPEED`
+    *   `IGNITION_STATUS`
+    *   `EV_BATTERY_LEVEL`: float
+    *   `ODOMETER`
+*   **Triggers (TRG):**
+    *   `CTS`: datetime (dd-mm-yy hh:mm:ss)
+    *   `PNID`: String
+    *   `NAME`: String
+    *   `VAL`: String
+*   **Mapping (MAP):**
+    *   `ID`: String
+    *   `IDS`: Array of Strings
+*   **Synthetic (SYN):**
+    *   `Vehicle ID`
+    *   `Timestamp`
+    *   `type`
+
+## Key Findings and Insights
+
+The analysis of the data revealed the following key insights:
+
+*   The dataset contains information for 19 vehicles.
+*   The telematics data spans from September 1, 2021, to January 30, 2022, and contains over 1 million data points.
+*   The trigger data is categorized into `Charge_State`, `EV_Charge_State`, and `Ignition_Cycle`.
+*   There are 410 synthetic ignition off events in the dataset.
+*   A significant number of PNIDs (39,262) in the trigger data are not mapped to any vehicle ID.
+*   After cleaning and merging, the trigger data contains 9,935 records, spanning from September 1, 2021, to January 31, 2022.
+
+## Challenges and Issues
+
+The following challenges and issues were encountered during the project:
+
+*   **Timestamp Conversion:** 93 timestamps in the telematics data contained microseconds, which caused issues during the conversion to datetime objects.
+*   **Incomplete Mapping:** 6 vehicles in the dataset are not mapped to any PNID, which means they lack trigger data.
+*   **Timezone Mismatch:** A timezone mismatch (IST vs. UTC) was identified between the trigger and telematics data.
+
+## Future Work
+
+The following are potential next steps for this project:
+
+*   **Resolve Data Issues:** Address the timestamp conversion issues, incomplete mapping, and timezone mismatch.
+*   **In-depth Battery Analysis:** Conduct a more in-depth analysis of the `Battery_Data.csv` file to understand battery performance and degradation.
+*   **Predictive Modeling:** Develop predictive models to forecast vehicle behavior, such as battery life or maintenance needs.
+*   **API Integration:** If required, the final processed data can be converted back to JSON format for integration with APIs.
