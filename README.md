@@ -27,9 +27,6 @@
 ## Repository Contents
 - `problem_statement_ce.pdf` - **START HERE** - Complete assignment requirements
 - `Motorq Data Science Assignment - 2025.zip` - Dataset and materials
-- `.gitattributes` - Git LFS configuration for large files
 
 ---
 **All the best with your assignment!** 🚀
-
-*Note: This repository uses Git LFS for large file management. Ensure you have Git LFS installed when cloning.*
