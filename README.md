@@ -1,81 +1,35 @@
-# Motorq Data Science Assignment 2025 - CE
+# Motorq Data Science Assignment 2025
 
-## Overview
-This repository contains the Motorq Data Science Assignment for 2025, focusing on data science and machine learning challenges in the automotive/vehicle telemetry domain.
+## Instructions for Applicants
 
-## Repository Structure
-This repository includes:
+### Step 1: Read the Assignment
+📖 **Read `problem_statement_ce.pdf` carefully** - This contains all the requirements, specifications, and evaluation criteria for your assignment.
 
-- **Problem Statement**: `problem_statement_ce.pdf` - Detailed assignment requirements and specifications
-- **Assignment Materials**: `Motorq Data Science Assignment - 2025.zip` - Complete dataset and supporting files (managed via Git LFS)
-- **Documentation**: This README file
-- **Git LFS Configuration**: `.gitattributes` - Ensures large files are handled efficiently
+### Step 2: Get the Dataset
+📦 **Download and extract `Motorq Data Science Assignment - 2025.zip`** - This contains your dataset and any supporting materials.
 
-## Technical Setup
+### Step 3: Complete the Assignment
+💻 Develop your solution according to the specifications in the PDF.
 
-### Git LFS (Large File Storage)
-This repository uses Git LFS to efficiently manage large files:
-- **Tracked file types**: `*.zip`
-- **Large files**: Assignment dataset (60MB) stored via LFS
-- **Benefits**: Faster clones, reduced repository size, efficient handling of binary files
+### Step 4: Submit Your Work
+📤 **Zip all your code and upload to GitHub:**
+- Create a new repository for your solution
+- Include all your code, notebooks, documentation, and results
+- Make sure your repository is public or share access with the evaluation team
+- Include a clear README explaining your approach and how to run your code
 
-### Getting Started
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/theharshavinash/ds_assement_2026_summer_intern_CE.git
-   cd ds_assement_2026_summer_intern_CE
-   ```
+### Step 5: Clean Up
+🗑️ **Delete the dataset after completion** - For data privacy and security reasons, please delete all assignment data from your local machine once you've submitted your work.
 
-2. **Ensure Git LFS is installed**:
-   ```bash
-   git lfs version
-   ```
-   If not installed, install via: `brew install git-lfs` (macOS) or visit [git-lfs.github.io](https://git-lfs.github.io/)
+## Need Help?
+💬 **Feel free to reach out to the Motorq team** if you have any questions or need clarification during the assignment.
 
-3. **Pull LFS files** (if needed):
-   ```bash
-   git lfs pull
-   ```
-
-4. **Extract assignment materials**:
-   ```bash
-   unzip "Motorq Data Science Assignment - 2025.zip"
-   ```
-
-5. **Review the problem statement**:
-   - Open `problem_statement_ce.pdf` for detailed requirements
-   - Follow the specifications and deliverables outlined
-
-## File Descriptions
-
-### Core Files
-- **`problem_statement_ce.pdf`** (1.2MB): Complete assignment specification with requirements, evaluation criteria, and submission guidelines
-- **`Motorq Data Science Assignment - 2025.zip`** (60MB): Comprehensive dataset package containing:
-  - Training and test datasets
-  - Data dictionaries and schemas
-  - Sample code or notebooks (if applicable)
-  - Additional resources and documentation
-
-### Configuration Files
-- **`.gitignore`**: Standard Git ignore patterns for data science projects
-- **`.gitattributes`**: Git LFS configuration for large file management
-
-## Assignment Workflow
-1. **Understand Requirements**: Review the problem statement thoroughly
-2. **Data Exploration**: Extract and analyze the provided datasets
-3. **Solution Development**: Implement the required analysis/models
-4. **Documentation**: Create comprehensive documentation of your approach
-5. **Submission**: Follow the submission guidelines in the problem statement
-
-## Best Practices
-- Keep your code modular and well-documented
-- Use version control effectively for your solution
-- Include clear explanations of your methodology
-- Validate your results and include performance metrics
-- Follow data science best practices for reproducibility
-
-## Support
-For questions or clarifications regarding the assignment, refer to the contact information provided in the problem statement document.
+## Repository Contents
+- `problem_statement_ce.pdf` - **START HERE** - Complete assignment requirements
+- `Motorq Data Science Assignment - 2025.zip` - Dataset and materials
+- `.gitattributes` - Git LFS configuration for large files
 
 ---
-*This repository demonstrates proper setup of Git LFS for data science projects with large datasets.*
+**All the best with your assignment!** 🚀
+
+*Note: This repository uses Git LFS for large file management. Ensure you have Git LFS installed when cloning.*
