@@ -65,11 +65,16 @@ Deduced That:
 9. 39,262 PNIDs have trigger data, but are not mapped to any of the vehicle IDs
 10. only 9935 proper triggers left after cleaning
 11. after cleaning and merging, TRG data is from 2021-09-01 05:56:15 until 2022-01-31 05:21:30
-12. 
+
+Charging Event Detection
+12. Possibility of Regeneraative Breaking (when the engine is on)
+13. 2% delta over 300 seconds timestamps can be used to check for REAL charging when the ignition is OFF
+14. 4% delta over 300 seconds timestamps can be used to check for REAL charging when the ignition is ON.
 
 ----------------------------------------------
 
 Issues:
 1. TLM has 93 timestamps with microseconds, problem in conversion
 2. 6 vehicles are not mapped to any PNID (i.e no Trigger Data Available, only Telementary)
+
 3. Timezone mismatch between TRG and TLM through IST and UTC
