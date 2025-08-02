@@ -1,0 +1,75 @@
+------Step 1------
+
+since it is not nested, not hierarchical, and uniform datatypes, chosen to keep json to excel
+all data to csv files to load and view in GUI(Excel) and DF(python)
+converted artificial_ign_off_data to csv from json
+output can be later converted to json if required to integrate with APIs
+
+------Step 2------
+available columns in all datasets
+TLM (Telematics - high rate)
+- ID - 
+- VEHICLE_ID - String
+- TIMESTAMP - datetime - dd-mm-yy hh:mm:ss
+- SPEED - 
+- IGNITION_STATUS - 
+- EV_BATTERY_LEVEL - float
+- ODOMETER - 
+
+TRG (Triggers - low rate)
+- CTS - datetime - dd-mm-yy hh:mm:ss
+- PNID - String
+- NAME - String
+- VAL - String(as per raw data, will be divided to process better)
+
+MAP (Mapping Primary vehicle ID from TLM to PNID in TRG)
+- ID - String
+- IDS - Array of Strings
+1 : many mapping
+
+SYN (Synthetic override - all moments of ignition off)
+- Vehicle ID
+- Timestamp (410 events)
+- type (all are artificial_event)
+
+------Step 3------
+Cleaning Data
+1. Addressing nulls
+2. removing duplicates
+
+------Step 3------
+Joining data
+transform MAP from A to B
+
+A. ID => list of IDS
+B. each IDS => its corresponding ID
+
+1. Joined MAP and TRG using PNID and IDS
+
+------Step 3------
+Split the merged Df into Charge_State, EV_Charge_State, Ignition_Cycle
+find outliers
+
+----------------------------------------------
+
+Deduced That:
+
+1. Given data is for 19 vehicles
+2. Given Telematics data is from 01-09-2021 00:00:03 untill 30-01-2022 23:59:36
+3. 10,48,575 datapoints between 151 days
+4. Triggers classified into 3 categories (Charge_State, EV_Charge_State, Ignition_Cycle)
+5. Charge_State gives value as battery level
+6. EV_Charge_State gives value as Active / Aborted / Complete
+7. IGN_CYCL has value only as ON / OFF
+8. 410 event synthetic events occuring between 18-12-2021 18:53:37 untill 31-01-2022 19:13:06
+9. 39,262 PNIDs have trigger data, but are not mapped to any of the vehicle IDs
+10. only 9935 proper triggers left after cleaning
+11. after cleaning and merging, TRG data is from 2021-09-01 05:56:15 until 2022-01-31 05:21:30
+12. 
+
+----------------------------------------------
+
+Issues:
+1. TLM has 93 timestamps with microseconds, problem in conversion
+2. 6 vehicles are not mapped to any PNID (i.e no Trigger Data Available, only Telementary)
+3. Timezone mismatch between TRG and TLM through IST and UTC
