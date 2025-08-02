@@ -1,4 +1,4 @@
-# Motorq Data Science Assignment 2024 - EDA and Data Parsing
+# Motorq Data Science Assignment 2025 - EDA and Data Parsing
 
 This repository contains the results of an exploratory data analysis (EDA) and data parsing project on a dataset provided by Motorq. The goal of this project was to understand the provided data, clean it, and prepare it for further analysis.
 
@@ -10,7 +10,7 @@ The project involved the following steps:
 2.  **Data Exploration:** An initial exploration of the different data files was conducted to understand their structure and contents.
 3.  **Data Cleaning:** The data was cleaned to address issues such as missing values and duplicate entries.
 4.  **Data Merging and Transformation:** The different data sources were merged and transformed to create a unified dataset.
-5.  **Exploratory Data Analysis:** A deeper analysis of the cleaned and merged data was performed to uncover insights and identify patterns.
+5.  **Exploratory Data Analysis:** A deeper analysis of the cleaned and merged data was performed to uncover insights and potentially identify patterns in battery consumption during Candidate Events.
 
 ## Dataset Description
 
@@ -72,7 +72,8 @@ The following challenges and issues were encountered during the project:
 
 The following are potential next steps for this project:
 
-*   **Resolve Data Issues:** Address the timestamp conversion issues, incomplete mapping, and timezone mismatch.
-*   **In-depth Battery Analysis:** Conduct a more in-depth analysis of the `Battery_Data.csv` file to understand battery performance and degradation.
-*   **Predictive Modeling:** Develop predictive models to forecast vehicle behavior, such as battery life or maintenance needs.
-*   **API Integration:** If required, the final processed data can be converted back to JSON format for integration with APIs.
+*   **Resolve Data Issues:** Develop a Pipeline to store data in the lake to Address the timestamp conversion issues, incomplete mapping, and timezone mismatch.
+*   **In-depth Battery Analysis:** Conduct a more in-depth analysis of the rate at which the charge dropsafter each eactivity or trigger to understand battery performance and degradation of each vehicle.
+*   **Predictive Modeling:** Develop predictive models to forecast usage and degradation of battery. optimum time for maintainance.
+*   **API Integration:** The final processed data can be converted back to JSON format for integration with APIs.
+*   **Customer Centric Dashboard:** Integration of all the derived data into an interactive and informative professional dashboard developed with **Customer Centric KPIs** for providing a customised real time tracking experience comprising all use cases in addition to the insights from these data as mentioned above.
